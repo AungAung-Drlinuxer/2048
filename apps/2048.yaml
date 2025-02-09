@@ -29,8 +29,10 @@ metadata:
   labels:
     app: game-service
 spec:
+  type: LoadBalancer
   ports:
-  - name: 2048-game
-    port: 80
+    - name: 2048-game
+      port: 80
+      targetPort: 80
   selector:
     app: 2048-game
